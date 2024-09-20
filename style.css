@@ -1,0 +1,111 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#dynamic-title {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.carousel-images {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-images img {
+    width: 100px; /* تعديل حجم الصورة حسب الحاجة */
+    height: auto;
+    margin-right: 10px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-2000px); } /* يجب تعديل هذا الرقم حسب عدد الصور */
+}
+
+.login-circle {
+    width: 200px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-circle form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-circle input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #007BFF;
+}
+
+.login-circle button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.circle-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.circle-button img {
+    width: 40px; /* حجم الصورة داخل الزر */
+    height: auto;
+}

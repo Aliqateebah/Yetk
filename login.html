@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">شبكة ملوك سبأ نت</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li class="li-active"><a href="login.html">الرئيسية</a></li>
+                <li><a href="paket.html">الباقات</a></li>
+                <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=967781208883&text=أحتاج%20معلومات%20عن%20نظام%20الهوتسبوت!">الدعم: 967781208883</a></li>
+            </ul>
+        </nav>
+
+        <div class="main" id="main">
+            <div class="header">
+                <img src="img/logo.png" width="350" alt="شعار شبكة ملوك سبأ نت">
+                <p>أفضل خدمات الإنترنت في مدينتك</p>
+            </div>
+            <div class="login-form">
+                <h1>| يرجى اختيار طريقة تسجيل الدخول الخاصة بك |</h1>
+                <div class="box">
+                    <button id="btnvrc" class="btn-top btn-active" onclick="voucher();">رمز القسيمة</button>
+                    <button id="btnmem" class="btn-top" onclick="member();">عضو</button>
+                </div>
+                <div class="box" id="infologin"></div>
+
+                <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                    <input class="username" name="username" type="text" value="$(username)" />
+                    <input class="username" name="password" placeholder="كلمة المرور" type="hidden" />
+                    <button class="log-in" type="submit">تفعيل القسيمة</button>
+                </form>
+
+                <p>" يرجى التأكد من الكود المدخل <br> تأكد من مطابقته للقسيمة لديك "</p>
+                
+                <h2>اختيار سرعة الإنترنت</h2>
+                <select id="internet-speed" onchange="updateSpeed();">
+                    <option value="1">1 ميغابت/ثانية</option>
+                    <option value="5">5 ميغابت/ثانية</option>
+                    <option value="10">10 ميغابت/ثانية</option>
+                    <option value="20">20 ميغابت/ثانية</option>
+                </select>
+                <p id="selected-speed">السرعة المحددة: 1 ميغابت/ثانية</p>
+            </div>
+
+            $(if trial == 'yes')
+            <div class="box">جرب مجانًا <a style="text-decoration: underline; color:#fff;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">اضغط هنا</a></div>
+            $(endif)
+
+            $(if error)<div class="notice">$(error)</div>$(endif)
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+
+        function updateSpeed() {
+            const speedSelect = document.getElementById("internet-speed");
+            const selectedSpeed = speedSelect.options[speedSelect.selectedIndex].text;
+            document.getElementById("selected-speed").innerText = "السرعة المحددة: " + selectedSpeed;
+        }
+
+        var hostname = window.location.hostname;
+        document.getElementById('title').innerHTML = hostname + "> شبكة ملوك سبأ نت";
+        
+        document.login.username.focus();
+        
+        var infologin = document.getElementById('infologin');
+        infologin.innerHTML = "أدخل رمز القسيمة ثم اضغط تسجيل الدخول.";
+        
+        var username = document.login.username;
+        var password = document.login.password;
+        
+        username.placeholder = "رمز القسيمة";
+        
+        function setpass() {
+            var user = username.value;
+            username.value = user;
+            password.value = user;
+        }
+        
+        username.onkeyup = setpass;
+        
+        function voucher() {
+            username.focus();
+            username.onkeyup = setpass;
+            username.placeholder = "رمز القسيمة";
+            password.type = "hidden";
+            infologin.innerHTML = "أدخل رمز القسيمة ثم اضغط تسجيل الدخول.";
+        }
+        
+        function member() {
+            username.focus();
+            username.onkeyup = "";
+            username.placeholder = "اسم المستخدم";
+            password.type = "password";
+            infologin.innerHTML = "أدخل اسم المستخدم وكلمة المرور ثم اضغط تسجيل الدخول.";
+        }
+    </script>
+</body>
+</html>

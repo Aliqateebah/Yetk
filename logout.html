@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+<meta charset="utf-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="theme-color" content="#3B5998" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+    <title>شبكة ملوك سبأ نت</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<script language="JavaScript">
+    function openLogin() {
+        if (window.name != 'hotspot_logout') return true;
+        open('$(link-login)', '_blank', '');
+        window.close();
+        return false;
+    }
+</script>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li class="li-active"><a href="login.html">الرئيسية</a></li>
+            <li><a href="paket.html">الباقات</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=967781208883&text=أحتاج%20معلومات%20عن%20نظام%20الهوتسبوت!">الدعم: 967781208883</a></li>
+        </ul>
+    </nav>
+  
+    <div class="main">
+        <div class="header">
+            <img src="img/logo.png" width="350">
+            <p>أفضل خدمات الإنترنت في مدينتك</p>
+        </div>
+        <div class="status">
+            <div class="box">
+                <div style="margin-top:30px; text-align: center;">
+                    <img src="img/panci.png" width="150"> 
+                    <h3 id="user">$(username)</h3>
+                </div><br>
+                <b style="margin-top:20px;">لقد قمت بتسجيل الخروج من الهوتسبوت!</b> <br><br>
+            </div>
+            <table class="table2">
+                <tr><td align="right" style="width: 40%;">عنوان IP <i class="icon icon-sitemap">&#128187;</i> </td><td>$(ip)</td></tr>
+                <tr><td align="right">عنوان MAC <i class="icon icon-barcode">&#128241;</i>  </td><td>$(mac)</td></tr>
+                <tr><td align="right">مدة الاتصال <i class="icon icon-exchange">&#127758;</i> </td><td>$(uptime)</td></tr>
+                <tr><td align="right">رفع <i class="icon icon-upload">&#8648;</i> </td><td>$(bytes-in-nice)</td></tr>
+                <tr><td align="right">تحميل <i class="icon icon-download">&#8650;</i> </td><td>$(bytes-out-nice)</td></tr>
+                $(if remain-bytes-total)
+                    <tr><td align="right">البيانات المتبقية <i class="icon icon-hourglass-2">&#128344;</i> </td><td>$(remain-bytes-total-nice)</td></tr>
+                $(endif)
+                $(if session-time-left)
+                    <tr><td align="right">الوقت المتبقي <i class="icon icon-clock">&#9203;</i> </td><td>$(session-time-left)</td></tr>
+                $(endif)
+            </table>
+            <br>
+            <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <button class="log-in" type="submit">تسجيل الدخول مرة أخرى</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById('title').innerHTML = window.location.hostname + " > تسجيل الخروج";
+</script>
+</body>
+</html>

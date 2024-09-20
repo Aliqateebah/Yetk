@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شبكة ملوك سبأ نت</title>
+    <link rel="stylesheet" href="styles.css"><style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#dynamic-title {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.carousel-images {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-images img {
+    width: 100px; /* تعديل حجم الصورة حسب الحاجة */
+    height: auto;
+    margin-right: 10px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-2000px); } /* يجب تعديل هذا الرقم حسب عدد الصور */
+}
+
+.login-circle {
+    width: 200px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-circle form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-circle input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #007BFF;
+}
+
+.login-circle button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.buttons {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.circle-button img {
+    width: 40px; /* حجم الصورة داخل الزر */
+    height: auto;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- صورة دائرية وعنوان -->
+        <div class="header">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h1 id="dynamic-title">شبكة ملوك سبأ نت</h1>
+        </div>
+
+        <!-- شريط الصور المتحركة -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <!-- إضافة 20 صورة هنا -->
+                <img src="img/image1.jpg" alt="Image 1">
+                <img src="img/image2.jpg" alt="Image 2">
+                <img src="img/image3.jpg" alt="Image 3">
+                <img src="img/image4.jpg" alt="Image 4">
+                <img src="img/image5.jpg" alt="Image 5">
+                <img src="img/image6.jpg" alt="Image 6">
+                <img src="img/image7.jpg" alt="Image 7">
+                <img src="img/image8.jpg" alt="Image 8">
+                <img src="img/image9.jpg" alt="Image 9">
+                <img src="img/image10.jpg" alt="Image 10">
+                <img src="img/image11.jpg" alt="Image 11">
+                <img src="img/image12.jpg" alt="Image 12">
+                <img src="img/image13.jpg" alt="Image 13">
+                <img src="img/image14.jpg" alt="Image 14">
+                <img src="img/image15.jpg" alt="Image 15">
+                <img src="img/image16.jpg" alt="Image 16">
+                <img src="img/image17.jpg" alt="Image 17">
+                <img src="img/image18.jpg" alt="Image 18">
+                <img src="img/image19.jpg" alt="Image 19">
+                <img src="img/image20.jpg" alt="Image 20">
+            </div>
+        </div>
+
+        <!-- دائرة تسجيل الدخول -->
+        <div class="login-circle">
+            <form id="login-form">
+                <input type="text" placeholder="اسم المستخدم" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit">دخول</button>
+            </form>
+        </div>
+
+        <!-- الأزرار الدائرية -->
+        <div class="buttons">
+            <a href="https://api.whatsapp.com/send?phone=967781208883" class="circle-button">
+                <img src="img/whatsapp.png" alt="واتساب">
+                <span>واتساب</span>
+            </a>
+            <a href="about.html" class="circle-button">
+                <img src="img/about.png" alt="من نحن">
+                <span>من نحن</span>
+            </a>
+            <a href="locations.html" class="circle-button">
+                <img src="img/locations.png" alt="أماكن تواجد الشبكة">
+                <span>أماكن تواجد الشبكة</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script><script>
+
+const titles = [
+    "شبكة ملوك سبأ نت",
+    "Sabaa Net",
+    "Sabaa Network",
+    "شبكة سبأ نت",
+    "Network Sabaa",
+    "Сетевой Сабаа",
+    "Netwerk Sabaa",
+];
+
+let titleIndex = 0;
+
+function changeTitle() {
+    document.getElementById('dynamic-title').innerText = titles[titleIndex];
+    titleIndex = (titleIndex + 1) % titles.length;
+}
+
+setInterval(changeTitle, 5000);
+
+
+</script>
+</body>
+</html>
