@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مايكروتيك WinBox</title>
+    <link rel="stylesheet" href="styles.css"><style>
+
+عذرًا على التوقف المفاجئ في الإجابة السابقة. هنا تتم إضافة بعض الوظائف الإضافية للصفحة:
+
+### CSS (styles.css):
+```css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 0.5em 1em;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label, input {
+    margin-bottom: 10px;
+}
+
+input, button {
+    padding: 0.5em;
+    margin-top: 5px;
+    font-size: 16px;
+}
+```
+
+هذا CSS سيقوم بتنسيق الصفحة وجعلها أكثر إحترافية. قم بنسخ الكود أعلاه ووضعه في ملف CSS بإسم styles.css.
+
+أتمنى أن يكون هذا مناسبًا لاحتياجاتك، وإذا كنت بحاجة إلى تعديلات إضافية أو مساعدة بشيء آخر، فلا تتردد في طلب ذلك!
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>مايكروتيك WinBox</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>تحديث البرامج</h2>
+            <button id="update-btn">تحديث</button>
+        </section>
+
+        <section>
+            <h2>إعدادات الشبكة</h2>
+            <ul>
+                <li>اسم الشبكة: WiFiNetwork</li>
+                <li>IP Address: 192.168.1.1</li>
+                <li>Subnet Mask: 255.255.255.0</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>تحكم في الجهاز</h2>
+            <button id="reboot-btn">إعادة تشغيل</button>
+            <button id="shutdown-btn">إيقاف</button>
+        </section>
+
+        <section>
+            <h2>عرض حركة الشبكة</h2>
+            <p>المرور الصادر: 100 Mbps</p>
+            <p>المرور الوارد: 50 Mbps</p>
+        </section>
+
+        <section>
+            <h2>إضافة حساب جديد</h2>
+            <form>
+                <label for="new-username">اسم المستخدم:</label>
+                <input type="text" id="new-username" name="new-username" required>
+                <label for="new-password">كلمة المرور:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <button type="submit" id="add-account-btn">إضافة حساب</button>
+            </form>
+        </section>
+    </main>
+
+<section>
+    <h2>قائمة الحسابات</h2>
+    <ul id="account-list">
+        <li>اسم المستخدم: user1</li>
+        <li>اسم المستخدم: user2</li>
+        <li>اسم المستخدم: user3</li>
+    </ul>
+</section>
+
+
+<section>
+    <h2>تسجيل الدخول</h2>
+    <form>
+        <label for="login-username">اسم المستخدم:</label>
+        <input type="text" id="login-username" name="login-username" required>
+        <label for="login-password">كلمة المرور:</label>
+        <input type="password" id="login-password" name="login-password" required>
+        <button type="submit" id="login-btn">تسجيل الدخول</button>
+    </form>
+    <p id="login-message"></p>
+</section>
+
+<section>
+    <h2>تفاصيل الحساب</h2>
+    <ul id="account-details">
+        <li>اسم المستخدم: </li>
+        <li>البريد الإلكتروني: </li>
+        <li>الهاتف: </li>
+    </ul>
+</section>
+
+<section>
+    <h2>تحديث تفاصيل الحساب</h2>
+    <form id="update-account-form">
+        <label for="update-username">اسم المستخدم:</label>
+        <input type="text" id="update-username" name="update-username" required>
+        <label for="update-email">البريد الإلكتروني:</label>
+        <input type="email" id="update-email" name="update-email" required>
+        <label for="update-phone">رقم الهاتف:</label>
+        <input type="tel" id="update-phone" name="update-phone" required>
+        <button type="submit" id="update-details-btn">تحديث التفاصيل</button>
+    </form>
+    <p id="update-message"></p>
+</section>
+
+<section>
+    <h2>حذف حساب</h2>
+    <form id="delete-account-form">
+        <label for="delete-username">اسم المستخدم:</label>
+        <input type="text" id="delete-username" name="delete-username" required>
+        <button type="submit" id="delete-account-btn">حذف الحساب</button>
+    </form>
+    <p id="delete-message"></p>
+</section>
+
+    <script src="app.js"></script><script>
+
+```
+
+### JavaScript (app.js):
+```javascript
+document.getElementById('update-btn').addEventListener('click', function() {
+    // Logic for updating software
+    console.log('Updating software...');
+});
+
+document.getElementById('reboot-btn').addEventListener('click', function() {
+    // Logic for rebooting device
+    console.log('Rebooting device...');
+});
+
+document.getElementById('shutdown-btn').addEventListener('click', function() {
+    // Logic for shutting down device
+    console.log('Shutting down device...');
+});
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const newUsername = document.getElementById('new-username').value;
+    const newPassword = document.getElementById('new-password').value;
+    
+    // Logic for adding new account
+    console.log('Adding new account:', newUsername, newPassword);
+});
+
+
+const accountList = document.getElementById('account-list');
+const addAccountButton = document.getElementById('add-account-btn');
+
+addAccountButton.addEventListener('click', function() {
+    const newUsername = document.getElementById('new-username').value;
+    const newPassword = document.getElementById('new-password').value;
+    
+    const newAccountItem = document.createElement('li');
+    newAccountItem.textContent = `اسم المستخدم: ${newUsername}`;
+    
+    accountList.appendChild(newAccountItem);
+    
+    // Clear input fields after adding account
+    document.getElementById('new-username').value = '';
+    document.getElementById('new-password').value = '';
+});
+
+const loginForm = document.querySelector('form');
+const loginMessage = document.getElementById('login-message');
+
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const loginUsername = document.getElementById('login-username').value;
+    const loginPassword = document.getElementById('login-password').value;
+    
+    const accountItems = document.querySelectorAll('#account-list li');
+    let validLogin = false;
+    
+    accountItems.forEach(function(item) {
+        const username = item.textContent.split(': ')[1];
+        if (username === loginUsername && loginPassword === 'password') {
+            validLogin = true;
+        }
+    });
+    
+    if (validLogin) {
+        loginMessage.textContent = 'تم تسجيل الدخول بنجاح!';
+    } else {
+        loginMessage.textContent = 'فشل تسجيل الدخول. الرجاء التأكد من اسم المستخدم وكلمة المرور.';
+    }
+});
+
+const accountDetails = document.getElementById('account-details');
+const accountItems = document.querySelectorAll('#account-list li');
+
+accountItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+        const username = item.textContent.split(': ')[1];
+        const email = `${username}@domain.com`; // يمكنك تخصيص البريد الالكتروني هنا
+        const phone = '123456789'; // يمكنك تخصيص رقم الهاتف هنا
+        
+        accountDetails.innerHTML = `
+            <li>اسم المستخدم: ${username}</li>
+            <li>البريد الإلكتروني: ${email}</li>
+            <li>الهاتف: ${phone}</li>
+        `;
+    });
+});
+
+const updateAccountForm = document.getElementById('update-account-form');
+const updateMessage = document.getElementById('update-message');
+let selectedUsername = "";
+
+accountItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+        selectedUsername = item.textContent.split(': ')[1];
+        document.getElementById('update-username').value = selectedUsername;
+    });
+});
+
+updateAccountForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const updatedUsername = document.getElementById('update-username').value;
+    const updatedEmail = document.getElementById('update-email').value;
+    const updatedPhone = document.getElementById('update-phone').value;
+    
+    accountItems.forEach(function(item) {
+        if (item.textContent.includes(selectedUsername)) {
+            item.textContent = `اسم المستخدم: ${updatedUsername}`;
+        }
+    });
+    
+    updateMessage.textContent = 'تم تحديث تفاصيل الحساب بنجاح!';
+    
+    // Clear input fields after updating
+    document.getElementById('update-username').value = '';
+    document.getElementById('update-email').value = '';
+    document.getElementById('update-phone').value = '';
+});
+
+const deleteAccountForm = document.getElementById('delete-account-form');
+const deleteMessage = document.getElementById('delete-message');
+
+deleteAccountForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const deleteUsername = document.getElementById('delete-username').value;
+    
+    let accountDeleted = false;
+    
+    accountItems.forEach(function(item) {
+        if (item.textContent.split(': ')[1] === deleteUsername) {
+            item.remove();
+            accountDeleted = true;
+        }
+    });
+    
+    if (accountDeleted) {
+        deleteMessage.textContent = 'تم حذف الحساب بنجاح!';
+    } else {
+        deleteMessage.textContent = 'لم يتم العثور على الحساب للحذف.';
+    }
+    
+    // Clear input field after deleting
+    document.getElementById('delete-username').value = '';
+});
+
+</script>
+</body>
+</html>
